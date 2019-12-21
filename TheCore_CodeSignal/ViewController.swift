@@ -16,8 +16,7 @@ class ViewController: UIViewController {
         print(largestNumber(n: 4))
     }
 
-    // MARK: - 1: You are given a two-digit integer n. Return the sum of its digits.
-    // Bạn được cấp một số nguyên n có hai chữ số. Trả về tổng các chữ số của nó.
+    // MARK: - 1: Bạn được cấp một số nguyên n có hai chữ số. Trả về tổng các chữ số của nó.
     
     func addTwoDigits(n: Int) -> Int {
         var sum: Int = 0
@@ -44,6 +43,18 @@ class ViewController: UIViewController {
     func way2_largestNumber(n: Int) -> Int {
         return Int(pow(10.0, Double(n))) - 1
     }
+    
+    //MARK: - 3
+    func candies(n: Int, m: Int) -> Int {
+        return n * (m/n)
+    }
+    
+    //MARK: - 4
+    func seatsInTheater(nCols: Int, nRows: Int, col: Int, row: Int) -> Int {
+        return (nCols - col + 1) * (nRows - row)
+    }
+    
+    
 
 }
 
