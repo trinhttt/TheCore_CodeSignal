@@ -54,7 +54,34 @@ class ViewController: UIViewController {
         return (nCols - col + 1) * (nRows - row)
     }
     
-    
+    //MARK: - 5
+    func maxMultiple(divisor: Int, bound: Int) -> Int {
+        return Int(bound / divisor) * divisor
+    }
 
+    //MARK: - 6
+    func circleOfNumbers(n: Int, firstNumber: Int) -> Int {
+        return (n / 2 + firstNumber) % n
+    }
+    
+    //MARK: - 7
+    func lateRide(n: Int) -> Int {
+        let h = n / 60
+        let m = n % 60
+        return (h % 10) + (h / 10) + (m % 10) + (m / 10)
+    }
+    
+    //MARK: - 8
+    func phoneCall(min1: Int, min2_10: Int, min11: Int, s: Int) -> Int {
+        if s < min1 {
+            return 0
+        } else if s == min1{
+            return 1
+        }else if s > min1 && s < (min1 + min2_10 * 9) {
+            return 1 + (s - min1 ) / min2_10
+        } else {
+            return 1 + 9 + (s - min1 - 9 * min2_10) / min11
+        }
+    }
 }
 
