@@ -83,5 +83,12 @@ class ViewController: UIViewController {
             return 1 + 9 + (s - min1 - 9 * min2_10) / min11
         }
     }
+    
+    // MARK: - 9
+    
+    func reachNextLevel(experience: Int, threshold: Int, reward: Int) -> Bool {
+        return experience + reward >= threshold
+    }
+
 }
 
