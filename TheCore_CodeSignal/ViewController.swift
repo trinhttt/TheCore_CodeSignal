@@ -89,6 +89,44 @@ class ViewController: UIViewController {
     func reachNextLevel(experience: Int, threshold: Int, reward: Int) -> Bool {
         return experience + reward >= threshold
     }
+    
+    // MARK: - 10
+    // For value1 = 10, weight1 = 5, value2 = 6, weight2 = 4, and maxW = 8, the output should be
+    //knapsackLight(value1, weight1, value2, weight2, maxW) = 10.
+
+    func knapsackLight(value1: Int, weight1: Int, value2: Int, weight2: Int, maxW: Int) -> Int {
+        if maxW >= (weight1 + weight2) {
+            return value1 + value2
+        } else {
+            if value1 >= value2 {
+                if maxW >= weight1 {
+                    return value1
+                } else if maxW >= weight2 {
+                    return value2
+                } else {
+                    return 0
+                }
+            } else if value1 <= value2  {
+                if maxW >= weight2 {
+                    return value2
+                } else if maxW >= weight1 {
+                    return value1
+                } else {
+                    return 0
+                }
+            } else {
+                return 0
+            }
+        }
+    }
+
+    func BEST_knapsackLight(value1: Int, weight1: Int, value2: Int, weight2: Int, maxW: Int) -> Int {
+        guard maxW >= weight1 || maxW >= weight2 else { return 0 }
+        guard maxW < weight1 + weight2 else { return value1 + value2 }
+        guard maxW >= weight1 else { return value2 }
+        guard maxW >= weight2 else { return value1 }
+        return max(value1, value2)
+    }
 
 }
 
