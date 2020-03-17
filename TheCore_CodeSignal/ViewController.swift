@@ -127,6 +127,7 @@ class ViewController: UIViewController {
         guard maxW >= weight2 else { return value1 }
         return max(value1, value2)
     }
+    // MARK: - 11
 
     /*
      You're given three integers, a, b and c. It is guaranteed that two of these integers are equal to each other. What is the value of the third integer?
@@ -154,7 +155,24 @@ class ViewController: UIViewController {
         if a == b { return c }
         if a == c {return b }
         return a
+    }
+    
+    // MARK: - 12
+    /*
+     Given integers a and b, determine whether the following pseudocode results in an infinite loop
 
+     while a is not equal to b do
+       increase a by 1
+       decrease b by 1
+     Assume that the program is executed on a virtual machine which can store arbitrary long numbers and execute forever.
+     */
+    func isInfiniteProcess(a: Int, b: Int) -> Bool {
+            if a == b { return false }
+            let space = abs(a - b) / 2
+            return a + space == b - space ? false : true
+    }
+    func BEST_isInfiniteProcess(a: Int, b: Int) -> Bool {
+       return (a > b) || (a % 2 != b % 2)
     }
 
 }
