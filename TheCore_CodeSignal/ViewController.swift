@@ -128,5 +128,34 @@ class ViewController: UIViewController {
         return max(value1, value2)
     }
 
+    /*
+     You're given three integers, a, b and c. It is guaranteed that two of these integers are equal to each other. What is the value of the third integer?
+     Example
+
+     For a = 2, b = 7, and c = 2, the output should be
+     extraNumber(a, b, c) = 7.
+
+     The two equal numbers are a and c. The third number (b) equals 7, which is the answer.
+     */
+    func extraNumber(a: Int, b: Int, c: Int) -> Int {
+        if a != b && a != c {
+            return a
+        } else if b != a && b != c {
+            return b
+        } else {
+            return c
+        }
+    }
+    func extraNumber2(a: Int, b: Int, c: Int) -> Int {
+        return [a,b,c].reduce(0) { $0 ^ $1 }
+    }
+
+    func extraNumber1(a: Int, b: Int, c: Int) -> Int {
+        if a == b { return c }
+        if a == c {return b }
+        return a
+
+    }
+
 }
 
