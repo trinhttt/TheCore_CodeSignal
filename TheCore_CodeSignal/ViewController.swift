@@ -203,8 +203,16 @@ class ViewController: UIViewController {
         }
         return false
     }
-
-
+    
+    // MARK: - 15 (easy)
+    
+    func willYou(young: Bool, beautiful: Bool, loved: Bool) -> Bool {
+        return young  && beautiful && !loved || ((!young || !beautiful) && loved)
+    }
+    
+    func BEST_willYou(young: Bool, beautiful: Bool, loved: Bool) -> Bool {
+        return (young && beautiful) != loved
+    }
 
 }
 
