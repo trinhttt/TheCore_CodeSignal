@@ -174,6 +174,37 @@ class ViewController: UIViewController {
     func BEST_isInfiniteProcess(a: Int, b: Int) -> Bool {
        return (a > b) || (a % 2 != b % 2)
     }
+    
+    // MARK: - 13
+    /*
+     Consider an arithmetic expression of the form a#b=c. Check whether it is possible to replace # with one of the four signs: +, -, * or / to obtain a correct expression.
+     */
+    ///ok =)))
+    func arithmeticExpression(a: Int, b: Int, c: Int) -> Bool {
+        return a + b == c || a - b == c || a * b == c || b * c == a
+    }
+    
+    // MARK: - 14
+    func tennisSet(score1: Int, score2: Int) -> Bool {
+      var score1 = score1
+        var score2 = score2
+        if score1 < score2 {
+            let temp = score1
+            score1 = score2
+            score2 = temp
+        }
+        
+        if (score1 == 7 && 5 <= score2 && score2 < 7) {
+            return true
+        }
+        
+        if (score1 == 6 && score2 <= 4) {
+            return true
+        }
+        return false
+    }
+
+
 
 }
 
