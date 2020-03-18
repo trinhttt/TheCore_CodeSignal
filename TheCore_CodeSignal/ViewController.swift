@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(best_addTwoDigits(n: 293))
-        print(largestNumber(n: 4))
+//        print(largestNumber(n: 4))
+        let result = self.killKthBit(n: 37, k: 3)
     }
 
     // MARK: - 1: Bạn được cấp một số nguyên n có hai chữ số. Trả về tổng các chữ số của nó.
@@ -212,6 +213,22 @@ class ViewController: UIViewController {
     
     func BEST_willYou(young: Bool, beautiful: Bool, loved: Bool) -> Bool {
         return (young && beautiful) != loved
+    }
+    
+    // MARK: - 16 (easy)
+    func metroCard(lastNumberOfDays: Int) -> [Int] {
+        if lastNumberOfDays == 28 || lastNumberOfDays == 30 {
+            return [31]
+        } else {
+            return [28, 30, 31]
+        }
+    }
+    
+    //  MARK: - 17 *
+    // ** other operator : https://trinhttt.wordpress.com/2020/03/18/operator-in-swift-ios/
+    func killKthBit(n: Int, k: Int) -> Int {
+        print(pow(2.0, Double(k-1)))
+      return n & ~Int(pow(2.0, Double(k-1)))
     }
 
 }
