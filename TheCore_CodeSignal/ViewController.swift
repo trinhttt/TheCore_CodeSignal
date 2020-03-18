@@ -14,7 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //print(best_addTwoDigits(n: 293))
 //        print(largestNumber(n: 4))
-        let result = self.killKthBit(n: 37, k: 3)
+//        let result = self.killKthBit(n: 37, k: 3)
+        var a = [24, 85, 0]
+        print(arrayPacking(a: a))
     }
 
     // MARK: - 1: Bạn được cấp một số nguyên n có hai chữ số. Trả về tổng các chữ số của nó.
@@ -230,6 +232,23 @@ class ViewController: UIViewController {
         print(pow(2.0, Double(k-1)))
       return n & ~Int(pow(2.0, Double(k-1)))
     }
-
+    
+    //  MARK: - 18
+    func pad(string : String, toSize: Int) -> String {
+      var padded = string
+      for _ in 0..<(toSize - string.count) {
+        padded = "0" + padded
+      }
+        return padded
+    }
+    
+    func arrayPacking(a: [Int]) -> Int {
+        let b = a
+        var resultString = ""
+        for num in b.reversed() {
+            resultString += self.pad(string: String(num, radix: 2), toSize: 8)
+        }
+        return Int(resultString, radix: 2)!
+    }
 }
 
