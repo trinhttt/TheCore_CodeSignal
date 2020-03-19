@@ -250,5 +250,42 @@ class ViewController: UIViewController {
         }
         return Int(resultString, radix: 2)!
     }
+    
+    // MARK: - 19
+    func rangeBitCount(a: Int, b: Int) -> Int {
+        /*
+        let vowels: Set<Character> = ["a", "e", "i", "o", "u"]
+    phrase.removeAll(where: { vowels.contains($0) })
+        */
+        var numbersString = ""
+        for i in a...b {
+            numbersString += String(i, radix: 2)
+        }
+        
+        //WAY1
+        let char: Set<Character> = ["0"]
+
+        numbersString.removeAll(where: { char.contains($0)})
+        return numbersString.count
+        // let result = numbersString.replacingOccurrences(of: "\"", with: "")
+        
+        //WAY 2:
+        var count = 0
+        for i in a...b {
+            count += String(i, radix:2).filter({$0 == "1"}).count
+        }
+    }
+    //NOTE:  let vowels: Set<Character> = ["0"]
+    /*
+    text2 = text2.textureName.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range:nil)
+    Null Character (\0)
+    Backslash (\\)
+    Horizontal Tab (\t)
+    Line Feed (\n)
+    Carriage Return (\r)
+    Double Quote (\")
+    Single Quote (\')
+    Unicode scalar (\u{n}), where n is between one and eight hexadecimal digits
+    */
 }
 
